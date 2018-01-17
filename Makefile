@@ -12,10 +12,7 @@ build: clean
 	helm lint ${DIR}
 
 install: 
-	helm install ${DIR} --name ${NAMESPACE} --namespace ${NAMESPACE}
-
-upgrade: 
-	helm upgrade ${NAMESPACE} ${DIR}  --namespace ${NAMESPACE}
+	helm upgrade ${NAMESPACE} ${DIR} --install --namespace ${NAMESPACE}
 
 delete:
 	helm delete --purge ${NAMESPACE}  --namespace ${NAMESPACE}
