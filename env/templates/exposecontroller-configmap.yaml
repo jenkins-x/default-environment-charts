@@ -1,15 +1,17 @@
 apiVersion: v1
 data:
   config.yml: |-
-    exposer: Ingress
 {{- if .Values.exposecontroller.domain }}
     domain: {{ .Values.exposecontroller.domain }}
 {{- end }}
 {{- if .Values.exposecontroller.http }}
     http: {{ .Values.exposecontroller.http  }}
 {{- end }}
-{{- if .Values.exposecontroller.tls-acme }}
-    tls-acme: {{ .Values.exposecontroller.tls-acme  }}
+{{- if .Values.exposecontroller.tlsacme }}
+    tls-acme: {{ .Values.exposecontroller.tlsacme  }}
+{{- end }}
+{{- if .Values.exposecontroller.exposer }}
+    exposer: {{ .Values.exposecontroller.exposer  }}
 {{- end }}
 kind: ConfigMap
 metadata:
