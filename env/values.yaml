@@ -1,1 +1,14 @@
+expose:
+  Args: 
+    - --v
+    - 4
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
 
+cleanup:
+  Args: 
+    - --cleanup
+  Annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: hook-succeeded
