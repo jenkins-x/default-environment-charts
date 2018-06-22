@@ -8,7 +8,9 @@ pipeline {
     stage('Validate Environment') {
       steps {
         container('maven') {
-          sh 'make build'
+          dir('env') {
+            sh 'jx step helm build'
+          }
         }
       }
     }
@@ -18,7 +20,9 @@ pipeline {
       }
       steps {
         container('maven') {
-          sh 'make install'
+          dir('env') {
+            sh 'jx step helm apply'
+          }
         }
       }
     }
