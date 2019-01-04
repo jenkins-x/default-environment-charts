@@ -1,9 +1,9 @@
 dependencies:
 - name: exposecontroller
-  version: 2.3.82
+  version: 2.3.88
   repository: http://chartmuseum.jenkins-x.io
   alias: expose
 - name: exposecontroller
-  version: 2.3.82
+  version: 2.3.88
   repository: http://chartmuseum.jenkins-x.io
   alias: cleanup
